@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">project23mompox</string>
+    <string name="body_city">Santa Cruz de Mompox, fundada a orillas del río Magdalena en 1537, es el más bello rincón de Macondo, en donde creció el amor eterno de Gabriel García Márquez, Mercedes Barcha, y por donde pasó siete veces el libertador Simón Bolívar, que la calificó como “Ciudad de Dios”.</string>
+    <string name="Photo_tag">Photogallery</string>
+    <string name="Prices_12">$10,00 -$15,00</string>
+    <string name="Date">05 OCtober, 2021</string>
+    <string name="Price_Tag">Precio :</string>
+    <string name="Dispo_tag">DIsponibilidad :</string>
+    <string name="Stars_cali">5.0</string>
+    <string name="City89">Mompox,Bolivar, Colombia</string>
+</resources>
