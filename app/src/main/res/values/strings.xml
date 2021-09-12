@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">City View</string>
+    <string name="image_desc">Tour por Rarotonga - Reserva online en Civitatis.com</string>
+    <string name="city_title"><u>Nombre:</u></string>
+    <string name="city">Rarotonga</string>
+    <string name="information_title"><u>Información General:</u></string>
+    <string name="information">Rarotonga es una pequeña isla volcánica en el Pacífico Sur, es la más grande y poblada del archipiélago de las islas Cook, en la cual se encuentra su capital Avarua con 13373 habitantes (último censo el 1 de julio del 2021)</string>
+    <string name="location_title"><u>Ubicación:</u></string>
+    <string name="location">21°14′00″S 159°47′00″O</string>
+    <string name="temperature_title"><u>Temperatura:</u></string>
+    <string name="temperature">24°C</string>
+    <string name="poi_title"><u>Puntos de Interés:</u></string>
+    <string name="poi">-Laguna Muri\r\n-Reserva Marina Aroa\r\n-Museo Cultural Te Ara\r\n-Jardín Botánico Maire Nui\r\n-Cascada Papua\n\n</string>
+    <string name="image2_desc">Barra mint</string>
+</resources>
