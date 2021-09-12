@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Proyecto POI</string>
+    <string name="texttitle">Villa de Leyva</string>
+    <string name="textbody">Villa de Leyva es una ciudad colombiana en el noreste de Bogotá. Es conocida por sus edificios coloniales encalados, las calles con adoquines y la gran Plaza Mayor.</string>
+    <string name="textviewsities">Sitios de interes</string>
+    <string name="textinfo">
+            <li>Iglesia Nuestra Señora del Rosario\n</li>
+            <li>Casa Terracota\n</li>
+            <li>Plaza Mayor\n</li>
+            <li>Viñedo Ain Karim</li>
+    </string>
+    <string name="buttontemperature">21°C</string>
+    <string name="localization">Boyacá, Colombia</string>
+</resources>
