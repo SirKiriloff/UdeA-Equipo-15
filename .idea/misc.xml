@@ -7,9 +7,14 @@
         <entry key="..\:/Users/Kiriloff/AndroidStudioProjects/CityView/app/src/main/res/drawable/ic_launcher_background.xml" value="0.303125" />
         <entry key="..\:/Users/Kiriloff/AndroidStudioProjects/CityView/app/src/main/res/layout-land/activity_main.xml" value="0.21205357142857142" />
         <entry key="..\:/Users/Kiriloff/AndroidStudioProjects/CityView/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout-land/activity_main.xml" value="0.33697916666666666" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_poi_list_hector.xml" value="0.2930253623188406" />
+        <entry key="app/src/main/res/layout/recycler_list_hector.xml" value="0.3399122807017544" />
       </map>
     </option>
   </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
