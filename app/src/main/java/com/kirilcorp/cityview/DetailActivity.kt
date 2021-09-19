@@ -50,7 +50,7 @@ class DetailActivity : AppCompatActivity() {
     private fun readSitiesJsonFile(): String? {
         var sitiesString: String? = null
         try {
-            val inputStream = assets.open("mock_sites.json")
+            val inputStream = assets.open("mock_sities.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
