@@ -1,4 +1,4 @@
-package com.example.proyectopoi
+package com.kirilcorp.cityview
 
 data class Sities (
     val name: String,
