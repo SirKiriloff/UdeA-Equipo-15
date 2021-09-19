@@ -11,10 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CityView">
         <activity
-            android:name=".PoiListHector"
+            android:name=".MainActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".PoiListHector"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

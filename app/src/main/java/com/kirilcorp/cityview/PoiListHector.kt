@@ -11,8 +11,8 @@ import java.io.IOException
 
 class PoiListHector : AppCompatActivity() {
 
-    private lateinit var poiList: ArrayList<POI_object>
-    private lateinit var poiAdapter: POI_Adapter
+    private lateinit var poiList: ArrayList<PoiObject>
+    private lateinit var poiAdapter: PoiAdapter
     private lateinit var recycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,26 +25,27 @@ class PoiListHector : AppCompatActivity() {
         poiList = generatePoiItems()
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
+        poiList = arrayListOf()
         recycler.addItemDecoration(
             DividerItemDecoration(
                 this,
                 DividerItemDecoration.VERTICAL
             )
         )
-        poiAdapter = POI_Adapter(poiList)
+        poiAdapter = PoiAdapter(poiList)
         recycler.adapter = poiAdapter
     }
 
-    private fun generatePoiItems(): ArrayList<POI_object> {
+    private fun generatePoiItems(): ArrayList<PoiObject> {
         val poiString = readPointsJsonFile()
-        try{
+        try {
             val poisJson = JSONArray(poiString)
-            for (i in 0 until poisJson.length()){
+            for (i in 0 until poisJson.length()) {
                 val poiJson = poisJson.getJSONObject(i)
-                val poiItem = POI_object(
+                val poiItem = PoiObject(
                     poiJson.getString("name"),
-                    poiJson.getString("descriptio"),
+                    poiJson.getString("description"),
                     poiJson.getString("score"),
                     poiJson.getString("image")
                 )
@@ -66,12 +67,10 @@ class PoiListHector : AppCompatActivity() {
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-
             pointsString = String(buffer)
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
         return pointsString
     }
 
