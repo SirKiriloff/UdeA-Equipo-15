@@ -1,4 +1,4 @@
-package com.example.proyectopoi
+package com.kirilcorp.cityview
 
 import android.view.LayoutInflater
 import android.view.View
@@ -20,7 +20,6 @@ class SitiesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val (name, descriptio, score, image) = mSities[position]
-        //val fullName = "$firstName $lastName"
         holder.nameLabel.text = name
         holder.descriptionLabel.text = descriptio
         holder.scoreLabel.text = score
@@ -41,11 +40,6 @@ class SitiesAdapter(
 
         fun render(sities: String){
             Picasso.get().load(sities).into(imgUrl)
-        }
-
-        init {
-//            itemView.setOnClickListener { showAddContactDialog(adapterPosition) }
-
         }
     }
 }
