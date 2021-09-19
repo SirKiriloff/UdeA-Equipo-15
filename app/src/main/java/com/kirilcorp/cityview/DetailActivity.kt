@@ -1,4 +1,4 @@
-package com.example.proyectopoi
+package com.kirilcorp.cityview
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -55,21 +55,10 @@ class DetailActivity : AppCompatActivity() {
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
-
             sitiesString = String(buffer)
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
         return sitiesString
     }
-
-  //  private fun createMockSities(): ArrayList<Sities> {
-  //      return arrayListOf(
-  //          Sities("Jose", "Perez", "jose@gmail.com", "37400"),
-  //          Sities("Jose", "Perez", "jose@gmail.com", "837372"),
-  //          Sities("Jose", "Perez", "jose@gmail.com", "839292"),
-  //          Sities("Juan", "Perez", "juan@gmail.com","92882")
-  //      )
-  //  }
 }
