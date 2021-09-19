@@ -37,7 +37,7 @@ class PoiListHector : AppCompatActivity() {
     }
 
     private fun generatePoiItems(): ArrayList<POI_object> {
-        val poiString = readPoiItemsJson()
+        val poiString = readPointsJsonFile()
         try{
             val poisJson = JSONArray(poiString)
             for (i in 0 until poisJson.length()){
@@ -58,21 +58,21 @@ class PoiListHector : AppCompatActivity() {
         return poiList
     }
 
-    private fun readPoiItemsJson(): String? {
-        var poiString = String?= null
-        try{
+    private fun readPointsJsonFile(): String? {
+        var pointsString: String? = null
+        try {
             val inputStream = assets.open("mock_data.json")
             val size = inputStream.available()
             val buffer = ByteArray(size)
             inputStream.read(buffer)
             inputStream.close()
 
-            poiString = String(buffer)
-        }catch (e: IOException) {
+            pointsString = String(buffer)
+        } catch (e: IOException) {
             e.printStackTrace()
         }
-        return poiString
 
+        return pointsString
     }
 
     companion object {
