@@ -13,4 +13,6 @@
     <string name="poi">-Laguna Muri\r\n-Reserva Marina Aroa\r\n-Museo Cultural Te Ara\r\n-Jardín Botánico Maire Nui\r\n-Cascada Papua\n\n</string>
     <string name="image2_desc">Barra mint</string>
     <string name="rarotonga">Isla de Rarotonga</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
