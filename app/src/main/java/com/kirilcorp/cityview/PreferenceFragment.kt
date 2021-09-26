@@ -1,4 +1,4 @@
-package com.example.android.navigation
+package com.kirilcorp.cityview
 
 import android.os.Bundle
 import androidx.preference.PreferenceFragmentCompat
