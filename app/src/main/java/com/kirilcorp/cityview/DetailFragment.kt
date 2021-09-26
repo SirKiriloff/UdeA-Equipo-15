@@ -1,4 +1,4 @@
-com.kirilcorp.cityview
+package com.kirilcorp.cityview
 
 import android.os.Bundle
 import android.view.LayoutInflater
