@@ -12,4 +12,7 @@
     <string name="poi_title"><u>Puntos de Interés:</u></string>
     <string name="poi">-Laguna Muri\r\n-Reserva Marina Aroa\r\n-Museo Cultural Te Ara\r\n-Jardín Botánico Maire Nui\r\n-Cascada Papua\n\n</string>
     <string name="image2_desc">Barra mint</string>
+    <string name="preference_header">Preferences</string>
+    <string name="notification_title">Enable notifications</string>
+    <string name="sound_title">Activate sound</string>
 </resources>
