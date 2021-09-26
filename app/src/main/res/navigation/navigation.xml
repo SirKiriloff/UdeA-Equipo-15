@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/detailFragment"
-        android:name="com.example.android.navigation.DetailFragment"
+        android:name="com.kirilcorp.cityview.DetailFragment"
         android:label="@string/information_title"
         tools:layout="@layout/fragment_detail" />
     <fragment
         android:id="@+id/generalFragment"
-        android:name="com.example.android.navigation.GeneralFragment"
+        android:name="com.kirilcorp.cityview.GeneralFragment"
         android:label="@string/city"
         tools:layout="@layout/fragment_general" >
         <action
@@ -21,6 +21,6 @@
     </fragment>
     <fragment
         android:id="@+id/preferenceFragment"
-        android:name="com.example.android.navigation.PreferenceFragment"
+        android:name="com.kirilcorp.cityview.PreferenceFragment"
         android:label="PreferenceFragment" />
 </navigation>
