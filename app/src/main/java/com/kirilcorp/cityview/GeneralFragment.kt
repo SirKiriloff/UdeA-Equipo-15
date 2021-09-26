@@ -30,7 +30,7 @@ class GeneralFragment : Fragment() {
         val binding = DataBindingUtil.inflate<FragmentGeneralBinding>(inflater,
             R.layout.fragment_general,container,false)
         binding.poiButton.setOnClickListener{ view : View ->
-            view.findNavController().navigate(R.id.action_generalFragment_to_detailFragment)
+            view.findNavController().navigate(R.id.action_generalFragment_to_recyclerFragment)
         }
         setHasOptionsMenu(true)
         return binding.root
