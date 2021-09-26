@@ -22,5 +22,5 @@
     <fragment
         android:id="@+id/preferenceFragment"
         android:name="com.kirilcorp.cityview.PreferenceFragment"
-        android:label="PreferenceFragment" />
+        android:label="@string/preference_header" />
 </navigation>
