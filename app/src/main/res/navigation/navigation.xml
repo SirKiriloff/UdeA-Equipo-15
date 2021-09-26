@@ -16,11 +16,16 @@
         android:label="@string/city"
         tools:layout="@layout/fragment_general" >
         <action
-            android:id="@+id/action_generalFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
+            android:id="@+id/action_generalFragment_to_recyclerFragment"
+            app:destination="@id/recyclerFragment" />
     </fragment>
     <fragment
         android:id="@+id/preferenceFragment"
         android:name="com.kirilcorp.cityview.PreferenceFragment"
         android:label="@string/preference_header" />
+    <fragment
+        android:id="@+id/recyclerFragment"
+        android:name="com.kirilcorp.cityview.RecyclerFragment"
+        android:label="@string/poi_title"
+        tools:layout="@layout/fragment_recycler" />
 </navigation>
