@@ -22,6 +22,11 @@ class PoiAdapter(
         holderPoi.poiName.text = poi_name
         holderPoi.poiDescription.text = poi_description
         holderPoi.poiScore.text = poi_score
+        holderPoi.itemView.setOnClickListener(View.OnClickListener() {
+            poiList.get(position)?.let {
+                onClick(it)
+            }
+        })
 //        holder.poiImage.text = poi_image todo("Traer Imagen")
     }
 
@@ -38,7 +43,7 @@ class PoiAdapter(
         private var currentPoi: PoiObject? = null
 
         init {
-            itemView.setOnClickListener {
+            itemView.setOnClickListener() {
                 currentPoi?.let {
                     onClick(it)
                 }

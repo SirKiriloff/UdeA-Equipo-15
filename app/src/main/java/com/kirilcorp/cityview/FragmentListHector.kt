@@ -16,11 +16,6 @@ import org.json.JSONException
 import java.io.IOException
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentListHector.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentListHector : Fragment() {
 
     private lateinit var poiList: ArrayList<PoiObject>
@@ -41,9 +36,7 @@ class FragmentListHector : Fragment() {
             R.layout.fragment_list_hector, container, false)
         recycler = binding.POIList
         setupRecyclerView()
-        generatePoiItems()
         poiList = generatePoiItems()
-
         setHasOptionsMenu(true)
 
         return binding.root
@@ -63,7 +56,8 @@ class FragmentListHector : Fragment() {
     }
 
     fun poiOnClick(poi: PoiObject) {
-        Log.d(TAG, "Click on: $poi")
+// Este es el que esta funcionando :D
+        Log.d(TAG, "Click on Fragment poiOnClick: $poi")
         view?.findNavController()?.navigate(R.id.action_fragmentListHector_to_fragmentDetailHector)
     }
 

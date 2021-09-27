@@ -8,16 +8,17 @@
 
     </data>
 
+
     <ScrollView
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        tools:context=".FragmentDetailHector">
+        android:layout_marginBottom="16dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:context=".FragmentDetailHector">
 
             <TextView
                 android:id="@+id/title"
@@ -73,4 +74,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
 </layout>

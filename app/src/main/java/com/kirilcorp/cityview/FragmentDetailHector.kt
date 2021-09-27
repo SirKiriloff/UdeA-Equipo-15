@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.kirilcorp.cityview.databinding.FragmentListHectorBinding
+import com.kirilcorp.cityview.databinding.FragmentDetailHectorBinding
 
 
 class FragmentDetailHector : Fragment() {
@@ -16,8 +16,9 @@ class FragmentDetailHector : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentListHectorBinding>(inflater,
+        val binding = DataBindingUtil.inflate<FragmentDetailHectorBinding>(inflater,
             R.layout.fragment_detail_hector, container, false)
+        setHasOptionsMenu(true)
 
         return binding.root
     }
