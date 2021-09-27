@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentListHector">
+
+    <fragment
+        android:id="@+id/fragmentListHector"
+        android:name="com.kirilcorp.cityview.FragmentListHector"
+        android:label="FragmentListHector" >
+        <action
+            android:id="@+id/action_fragmentListHector_to_fragmentDetailHector"
+            app:destination="@id/fragmentDetailHector" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentSettingsHector"
+        android:name="com.kirilcorp.cityview.FragmentSettingsHector"
+        android:label="FragmentSettingsHector" />
+    <fragment
+        android:id="@+id/fragmentDetailHector"
+        android:name="com.kirilcorp.cityview.FragmentDetailHector"
+        android:label="FragmentDetailHector" />
+</navigation>

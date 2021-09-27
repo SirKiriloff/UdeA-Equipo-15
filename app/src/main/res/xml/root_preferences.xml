@@ -1,0 +1,10 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreferenceCompat
+        app:key="notifications"
+        app:title="Enable push notifications" />
+    <SwitchPreferenceCompat
+        app:key="sounds"
+        app:title="Enable sounds" />
+
+</PreferenceScreen>
