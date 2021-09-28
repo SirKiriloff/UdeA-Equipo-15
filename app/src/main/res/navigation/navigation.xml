@@ -27,5 +27,9 @@
         android:id="@+id/recyclerFragment"
         android:name="com.kirilcorp.cityview.RecyclerFragment"
         android:label="@string/poi_title"
-        tools:layout="@layout/fragment_recycler" />
+        tools:layout="@layout/fragment_recycler" >
+        <action
+            android:id="@+id/action_recyclerFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
 </navigation>
