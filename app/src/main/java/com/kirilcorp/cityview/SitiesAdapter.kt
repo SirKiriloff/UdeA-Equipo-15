@@ -10,7 +10,8 @@ import com.squareup.picasso.Picasso
 import java.util.ArrayList
 
 class SitiesAdapter(
-    private val mSities: ArrayList<Sities>
+    private val mSities: ArrayList<Sities>,
+    private val onClick: (Sities) -> Unit
 ) : RecyclerView.Adapter<SitiesAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -24,6 +25,11 @@ class SitiesAdapter(
         holder.descriptionLabel.text = descriptio
         holder.scoreLabel.text = score
         holder.render(image)
+        holder.itemView.setOnClickListener(View.OnClickListener() {
+            mSities.get(position)?.let {
+                onClick(it)
+            }
+        })
     }
 
     override fun getItemCount(): Int {
