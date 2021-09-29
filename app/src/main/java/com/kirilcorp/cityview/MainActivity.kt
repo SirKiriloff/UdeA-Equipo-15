@@ -2,6 +2,9 @@ package com.kirilcorp.cityview
 
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -24,9 +27,13 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
+
+
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()
     }
+
+
 
 //    override fun onClickItem(poi: PoiObject) {
 //        Log.d(FragmentListHector.TAG, "Click On MainActivity: $poi")

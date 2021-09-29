@@ -31,4 +31,7 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="notifications_title">Enable Notifications</string>
     <string name="notifications_header">notifications_header</string>
+    <string name="label_list">POI List - 15</string>
+    <string name="label_detail">POI Detail - 15</string>
+    <string name="menu_settings_title">Settings</string>
 </resources>

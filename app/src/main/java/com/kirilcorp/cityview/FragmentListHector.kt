@@ -22,25 +22,30 @@ class FragmentListHector : Fragment() {
     private lateinit var poiAdapter: PoiAdapter
     private lateinit var recycler: RecyclerView
 
-//    override fun onCreate(savedInstanceState: Bundle?) {
-//        super.onCreate(savedInstanceState)
-//        val binding = DataBindingUtil.inflate<FragmentListHectorBinding>(inflater,
-//            R.layout.fragment_list_hector, container, false)
-//        }
-//    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentListHectorBinding>(inflater,
             R.layout.fragment_list_hector, container, false)
+
         recycler = binding.POIList
         setupRecyclerView()
         poiList = generatePoiItems()
-        setHasOptionsMenu(true)
+
 
         return binding.root
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+//        inflater.inflate(R.menu.option_menu, menu);
+//
+//        super.onCreateOptionsMenu(menu, inflater)
+//    }
 
     private fun setupRecyclerView() {
         poiList = arrayListOf()
@@ -58,6 +63,7 @@ class FragmentListHector : Fragment() {
     fun poiOnClick(poi: PoiObject) {
 // Este es el que esta funcionando :D
         Log.d(TAG, "Click on Fragment poiOnClick: $poi")
+
         view?.findNavController()?.navigate(R.id.action_fragmentListHector_to_fragmentDetailHector)
     }
 

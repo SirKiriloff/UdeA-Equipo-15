@@ -8,6 +8,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/POI_list"
+        android:label="@string/label_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="LinearLayoutManager" />
