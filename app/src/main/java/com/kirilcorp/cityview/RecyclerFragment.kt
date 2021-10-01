@@ -6,7 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kirilcorp.cityview.databinding.FragmentRecyclerBinding
 import org.json.JSONArray
@@ -18,14 +19,15 @@ class RecyclerFragment : Fragment() {
     private lateinit var mSities: ArrayList<Sities>
     private lateinit var mAdapter: SitiesAdapter
     private lateinit var recycler: RecyclerView
+    private lateinit var model: SitiesViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         val binding = DataBindingUtil.inflate<FragmentRecyclerBinding>(inflater,
             R.layout.fragment_recycler,container,false)
+        model = ViewModelProvider(requireActivity()).get(SitiesViewModel::class.java)
         recycler = binding.sitiesListF
         setupRecyclerView()
         generateSities()
@@ -39,7 +41,8 @@ class RecyclerFragment : Fragment() {
     }
 
     fun sitiesOnClick(site: Sities) {
-        view?.findNavController()?.navigate(R.id.action_recyclerFragment_to_detailFragment)
+        model.select(site)
+        findNavController()?.navigate(R.id.action_recyclerFragment_to_detailFragment)
     }
 
     private fun generateSities() {
