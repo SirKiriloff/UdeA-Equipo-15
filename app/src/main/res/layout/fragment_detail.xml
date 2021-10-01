@@ -10,26 +10,26 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/title"
+            android:id="@+id/titleDetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:text="@string/city"
             android:textSize="34sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/city"/>
 
         <ImageView
             android:id="@+id/placeImg"
-            android:layout_width="221dp"
-            android:layout_height="158dp"
+            android:layout_width="311dp"
+            android:layout_height="188dp"
             android:layout_margin="16dp"
             android:layout_marginTop="56dp"
             android:contentDescription="@string/city"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintTop_toBottomOf="@+id/titleDetail"
             app:srcCompat="@drawable/rarotonga" />
 
         <TextView
@@ -37,8 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/information"
+            android:layout_marginTop="2dp"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Body1"
             android:textSize="20sp"
@@ -46,8 +45,9 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/placeImg"
-            app:layout_constraintVertical_bias="0.174" />
-        
+            app:layout_constraintVertical_bias="0.0"
+            tools:text="@string/information" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>
