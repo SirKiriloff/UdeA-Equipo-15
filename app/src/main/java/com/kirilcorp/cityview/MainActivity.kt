@@ -35,6 +35,8 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+
 //    override fun onClickItem(poi: PoiObject) {
 //        Log.d(FragmentListHector.TAG, "Click On MainActivity: $poi")
 //        navController.navigate(R.id.action_fragmentListHector_to_fragmentDetailHector)
