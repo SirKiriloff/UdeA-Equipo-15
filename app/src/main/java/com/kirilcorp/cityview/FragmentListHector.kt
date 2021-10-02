@@ -83,7 +83,7 @@ class FragmentListHector : Fragment() {
                     poiJson.getString("score"),
                     poiJson.getString("image")
                 )
-                Log.d(PoiListHector.TAG, "Generate Item: $poiItem")
+                Log.d(TAG, "Generate Item: $poiItem")
                 poiList.add(poiItem)
             }
             poiAdapter.notifyDataSetChanged()
