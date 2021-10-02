@@ -9,5 +9,4 @@ class FragmentSettingsHector : PreferenceFragmentCompat() {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
     }
 
-
 }

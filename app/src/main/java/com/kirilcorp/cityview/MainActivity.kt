@@ -14,31 +14,39 @@ import com.kirilcorp.cityview.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
-    
+
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         @Suppress("UNUSED_VARIABLE")
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
+        val binding =
+            DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
         navController = this.findNavController(R.id.nav_host_fragment)
 
         NavigationUI.setupActionBarWithNavController(this, navController)
-    }
 
+    }
 
 
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp()
     }
 
-
-
-
-
-//    override fun onClickItem(poi: PoiObject) {
-//        Log.d(FragmentListHector.TAG, "Click On MainActivity: $poi")
-//        navController.navigate(R.id.action_fragmentListHector_to_fragmentDetailHector)
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.option_menu, menu)
+//        return true
 //    }
+//
+//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+////        navController.navigate(R.id.fragmentSettingsHector)
+////        return super.onOptionsItemSelected(item)
+//
+//        return NavigationUI.onNavDestinationSelected(item,this.findNavController())
+//                || super.onOptionsItemSelected(item)
+//    }
+
+//    todo Revisar porque no esta navegando en reversa con el NavigateUp, OptionMenu
+
 }
