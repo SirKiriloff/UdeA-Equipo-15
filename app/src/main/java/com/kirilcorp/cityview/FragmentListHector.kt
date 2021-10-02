@@ -3,14 +3,12 @@ package com.kirilcorp.cityview
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import androidx.fragment.app.Fragment
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation.findNavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment.findNavController
+import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.kirilcorp.cityview.databinding.FragmentListHectorBinding
@@ -31,24 +29,24 @@ class FragmentListHector : Fragment() {
         setHasOptionsMenu(true)
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        val binding = DataBindingUtil.inflate<FragmentListHectorBinding>(inflater,
-            R.layout.fragment_list_hector, container, false)
-
+        val binding = DataBindingUtil.inflate<FragmentListHectorBinding>(
+            inflater,
+            R.layout.fragment_list_hector, container, false
+        )
         recycler = binding.POIList
         setupRecyclerView()
         poiList = generatePoiItems()
-
-
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         model = ViewModelProvider(requireActivity()).get(PoiViewModel::class.java)
         model.getPoiClicked().observe(viewLifecycleOwner, Observer {
-
         })
     }
 
@@ -61,7 +59,8 @@ class FragmentListHector : Fragment() {
             )
         )
         poiAdapter = PoiAdapter(poiList) { poi ->
-            poiOnClick(poi)}
+            poiOnClick(poi)
+        }
         recycler.adapter = poiAdapter
     }
 
@@ -109,17 +108,20 @@ class FragmentListHector : Fragment() {
         return pointsString
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.option_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return NavigationUI.onNavDestinationSelected(item, requireView().findNavController())
+                || super.onOptionsItemSelected(item)
+    }
+
     companion object {
 
         val TAG = FragmentListHector::class.java.simpleName
 
-//        fun newInstance(param1: String, param2: String) =
-//                FragmentListHector().apply {
-//                    arguments = Bundle().apply {
-//                        putString(ARG_PARAM1, param1)
-//                        putString(ARG_PARAM2, param2)
-//                    }
-//                }
     }
 }
 
