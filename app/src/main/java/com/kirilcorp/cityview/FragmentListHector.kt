@@ -108,20 +108,20 @@ class FragmentListHector : Fragment() {
         )
     }
 
-    private fun readPointsJsonFile(): String? {
-        var pointsString: String? = null
-        try {
-            val inputStream = requireActivity().assets.open("mock_data.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            pointsString = String(buffer)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return pointsString
-    }
+//    private fun readPointsJsonFile(): String? {
+//        var pointsString: String? = null
+//        try {
+//            val inputStream = requireActivity().assets.open("mock_data.json")
+//            val size = inputStream.available()
+//            val buffer = ByteArray(size)
+//            inputStream.read(buffer)
+//            inputStream.close()
+//            pointsString = String(buffer)
+//        } catch (e: IOException) {
+//            e.printStackTrace()
+//        }
+//        return pointsString
+//    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
 import com.kirilcorp.cityview.databinding.FragmentDetailHectorBinding
 
 
@@ -31,9 +32,16 @@ class FragmentDetailHector : Fragment() {
         )
         model = ViewModelProvider(requireActivity()).get(PoiViewModel::class.java)
         model.getPoiClicked().observe(viewLifecycleOwner, Observer {
-            binding.infoGeneral.text = it.poiDescription
+            binding.infoGeneral.text = it.poiInfo
             binding.title.text = it.poiName
-            binding.placeData.text = it.poiScore
+            binding.scoreData?.text = it.poiScore
+            binding.temperatureData?.text = it.poiTemperature
+            binding.locationData?.text = it.poiLocation.toString()
+            binding.populationData?.text = it.poiPopulation
+            Glide.with(this)
+                .load(it.poiImage)
+                .fitCenter()
+                .into(binding.placeImg);
         })
         return binding.root
     }

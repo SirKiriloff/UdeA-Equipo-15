@@ -34,4 +34,8 @@
     <string name="label_list">POI List - 15</string>
     <string name="label_detail">POI Detail - 15</string>
     <string name="menu_settings_title">Settings</string>
+    <string name="temperature_label">Temperature:</string>
+    <string name="population_label">Population:</string>
+    <string name="location_label">Location:</string>
+    <string name="score_label">Score:</string>
 </resources>
