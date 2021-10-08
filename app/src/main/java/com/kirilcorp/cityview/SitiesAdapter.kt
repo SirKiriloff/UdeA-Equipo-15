@@ -7,10 +7,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
-import java.util.ArrayList
 
 class SitiesAdapter(
-    private val mSities: ArrayList<Sities>,
+    private val mSities: MutableList<Sities>,
     private val onClick: (Sities) -> Unit
 ) : RecyclerView.Adapter<SitiesAdapter.ViewHolder>() {
 
