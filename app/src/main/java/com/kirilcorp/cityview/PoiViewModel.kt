@@ -11,7 +11,6 @@ import kotlinx.coroutines.withContext
 class PoiViewModel : ViewModel() {
 
     private var apiService = PoiFactory.apiService()
-
     private val poiClicked = MutableLiveData<PoiModel>()
     private var poiList = MutableLiveData<List<PoiModel>>()
     var poisLiveData: LiveData<List<PoiModel>> = poiList
@@ -30,7 +29,6 @@ class PoiViewModel : ViewModel() {
         return withContext(Dispatchers.IO) {
             apiService.requestPois()
         }
-
     }
 
     fun setPoiClicked(poi: PoiModel) {

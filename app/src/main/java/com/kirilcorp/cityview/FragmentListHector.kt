@@ -5,7 +5,6 @@ import android.util.Log
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -13,7 +12,6 @@ import androidx.navigation.ui.NavigationUI
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.RecyclerView
 import com.kirilcorp.cityview.databinding.FragmentListHectorBinding
-import java.io.IOException
 
 
 class FragmentListHector : Fragment() {
@@ -38,7 +36,6 @@ class FragmentListHector : Fragment() {
             R.layout.fragment_list_hector, container, false
         )
         return binding.root
-
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +48,6 @@ class FragmentListHector : Fragment() {
             poiAdapter.updatePoiList(it)
         })
         model.getPoiClicked().observe(viewLifecycleOwner, Observer {
-//        poiOnClick(it)
         })
     }
 
@@ -77,51 +73,14 @@ class FragmentListHector : Fragment() {
         view?.findNavController()?.navigate(R.id.action_fragmentListHector_to_fragmentDetailHector)
     }
 
-//    private fun generatePoiItems(): ArrayList<PoiObject> {
-//        val poiString = readPointsJsonFile()
-//        try {
-//            val poisJson = JSONArray(poiString)
-//            for (i in 0 until poisJson.length()) {
-//                val poiJson = poisJson.getJSONObject(i)
-//                val poiItem = PoiObject(
-//                    poiJson.getString("name"),
-//                    poiJson.getString("description"),
-//                    poiJson.getString("score"),
-//                    poiJson.getString("image")
-//                )
-//                Log.d(TAG, "Generate Item: $poiItem")
-//                poiList.add(poiItem)
-//            }
-//            poiAdapter.notifyDataSetChanged()
-//        } catch (e: JSONException) {
-//            e.printStackTrace()
-//        }
-//        return poiList
-//    }
-
     private fun createMockContacts(): ArrayList<PoiModel> {
         return arrayListOf(
-            PoiModel(1, "una cosa", "jose@gmail.com", "",
-                "", "", "", "",null),
-            PoiModel(2, "otra cosa", "juan@gmail.com", "",
-                "", "", "", "",null)
+            PoiModel(
+                1, "Please Wait ...", "retrieving items", "",
+                "", "", "", "", null
+            ),
         )
     }
-
-//    private fun readPointsJsonFile(): String? {
-//        var pointsString: String? = null
-//        try {
-//            val inputStream = requireActivity().assets.open("mock_data.json")
-//            val size = inputStream.available()
-//            val buffer = ByteArray(size)
-//            inputStream.read(buffer)
-//            inputStream.close()
-//            pointsString = String(buffer)
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//        }
-//        return pointsString
-//    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
@@ -136,7 +95,6 @@ class FragmentListHector : Fragment() {
     companion object {
 
         val TAG = FragmentListHector::class.java.simpleName
-
     }
 }
 

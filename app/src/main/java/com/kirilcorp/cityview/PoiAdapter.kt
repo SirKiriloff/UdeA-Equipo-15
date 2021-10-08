@@ -14,7 +14,6 @@ class PoiAdapter(
     private val onClick: (PoiModel) -> Unit
 ) : RecyclerView.Adapter<PoiAdapter.PoiViewHolder>() {
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PoiViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.items_poi_list_hector, parent, false)
@@ -22,7 +21,6 @@ class PoiAdapter(
     }
 
     override fun onBindViewHolder(holderPoi: PoiViewHolder, position: Int) {
-
         holderPoi.bind(poiList[position])
         holderPoi.itemView.setOnClickListener(View.OnClickListener {
             poiList.get(position).let {
@@ -47,7 +45,6 @@ class PoiAdapter(
         var poiDescription: TextView = itemView.findViewById(R.id.poi_short_description)
         var poiScore: TextView = itemView.findViewById(R.id.poi_score)
         var poiImage: ImageView = itemView.findViewById(R.id.imageview_poi)
-
         private var currentPoi: PoiModel? = null
 
         init {
@@ -62,7 +59,6 @@ class PoiAdapter(
             poiName.text = poi.poiName
             poiDescription.text = poi.poiDescription
             poiScore.text = poi.poiScore
-
             Glide.with(itemView)
                 .load(poi.poiImage)
                 .fitCenter()

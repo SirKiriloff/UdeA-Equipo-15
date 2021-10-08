@@ -12,7 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
 import com.kirilcorp.cityview.databinding.FragmentDetailHectorBinding
 
-
 class FragmentDetailHector : Fragment() {
 
     private lateinit var model: PoiViewModel
@@ -34,14 +33,14 @@ class FragmentDetailHector : Fragment() {
         model.getPoiClicked().observe(viewLifecycleOwner, Observer {
             binding.infoGeneral.text = it.poiInfo
             binding.title.text = it.poiName
-            binding.scoreData?.text = it.poiScore
-            binding.temperatureData?.text = it.poiTemperature
-            binding.locationData?.text = it.poiLocation.toString()
-            binding.populationData?.text = it.poiPopulation
+            binding.scoreData.text = it.poiScore
+            binding.temperatureData.text = it.poiTemperature
+            binding.locationData.text = it.poiLocation.toString()
+            binding.populationData.text = it.poiPopulation
             Glide.with(this)
                 .load(it.poiImage)
                 .fitCenter()
-                .into(binding.placeImg);
+                .into(binding.placeImg)
         })
         return binding.root
     }
