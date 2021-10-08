@@ -10,13 +10,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.kirilcorp.cityview.databinding.FragmentRecyclerBinding
-import org.json.JSONArray
-import org.json.JSONException
-import java.io.IOException
+import androidx.lifecycle.Observer
 
 class RecyclerFragment : Fragment() {
 
-    private lateinit var mSities: ArrayList<Sities>
     private lateinit var mAdapter: SitiesAdapter
     private lateinit var recycler: RecyclerView
     private lateinit var model: SitiesViewModel
@@ -29,13 +26,19 @@ class RecyclerFragment : Fragment() {
             R.layout.fragment_recycler,container,false)
         model = ViewModelProvider(requireActivity()).get(SitiesViewModel::class.java)
         recycler = binding.sitiesListF
-        setupRecyclerView()
-        generateSities()
         return binding.root
     }
-    private fun setupRecyclerView() {
-        mSities = arrayListOf()
-        mAdapter = SitiesAdapter(mSities){ site ->
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        model.poisLiveData.observe(viewLifecycleOwner, Observer {
+            setupRecyclerView(it as MutableList<Sities>)
+        })
+    }
+
+    private fun setupRecyclerView(poisList: MutableList<Sities>) {
+        mAdapter = SitiesAdapter(poisList){ site ->
             sitiesOnClick(site)}
         recycler.adapter = mAdapter
     }
@@ -43,40 +46,5 @@ class RecyclerFragment : Fragment() {
     fun sitiesOnClick(site: Sities) {
         model.select(site)
         findNavController()?.navigate(R.id.action_recyclerFragment_to_detailFragment)
-    }
-
-    private fun generateSities() {
-        val sitiesString = readSitiesJsonFile()
-        try {
-            val sitiesJson = JSONArray(sitiesString)
-            for (i in 0 until sitiesJson.length()) {
-                val siteJson = sitiesJson.getJSONObject(i)
-                val site = Sities(
-                    siteJson.getString("name"),
-                    siteJson.getString("descriptio"),
-                    siteJson.getString("score"),
-                    siteJson.getString("image")
-                )
-                mSities.add(site)
-            }
-            mAdapter.notifyDataSetChanged()
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-    }
-
-    private fun readSitiesJsonFile(): String? {
-        var sitiesString: String? = null
-        try {
-            val inputStream = requireActivity().assets.open("mock_sities.json")
-            val size = inputStream.available()
-            val buffer = ByteArray(size)
-            inputStream.read(buffer)
-            inputStream.close()
-            sitiesString = String(buffer)
-        } catch (e: IOException) {
-            e.printStackTrace()
-        }
-        return sitiesString
     }
 }
