@@ -14,5 +14,8 @@ data class Sities (
     val score: String,
 
     @SerializedName("image")
-    var image: String
+    var image: String,
+
+    @SerializedName("ubication")
+    var ubication: String
 )
