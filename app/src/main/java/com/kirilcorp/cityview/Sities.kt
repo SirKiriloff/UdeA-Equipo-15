@@ -13,6 +13,9 @@ data class Sities (
     @SerializedName("score")
     val score: String,
 
+    @SerializedName("temperature")
+    val temperature: String,
+
     @SerializedName("image")
     var image: String,
 
