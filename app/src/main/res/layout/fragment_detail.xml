@@ -47,6 +47,40 @@
             app:layout_constraintTop_toBottomOf="@+id/placeImg"
             app:layout_constraintVertical_bias="0.0"
             tools:text="@string/information" />
+        
+        <Button
+            android:id="@+id/btnUbication"
+            android:layout_width="236dp"
+            android:layout_height="65dp"
+            android:layout_marginStart="160dp"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/purple_700"
+            android:drawableEnd="@drawable/iconlocaliz"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/infoGeneral"
+            tools:text="@string/location" />
+
+        <TextView
+            android:id="@+id/temperatureDetail"
+            android:layout_width="110dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/teal_200"
+            android:drawableEnd="@drawable/tm"
+            android:fontFamily="sans-serif-black"
+            android:textAlignment="center"
+            android:textColor="@color/redish"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toStartOf="@+id/btnUbication"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnUbication"
+            tools:text="@string/temperature"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
