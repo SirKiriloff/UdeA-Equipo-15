@@ -1,5 +1,8 @@
 package com.kirilcorp.cityview
 
+import android.content.Intent
+import android.net.Uri
+import android.view.View
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -36,5 +39,7 @@ class PoiViewModel : ViewModel() {
     }
 
     fun getPoiClicked(): LiveData<PoiModel> = poiClicked
+
+
 
 }
