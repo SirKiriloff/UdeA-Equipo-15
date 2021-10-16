@@ -13,11 +13,17 @@ data class Sities (
     @SerializedName("score")
     val score: String,
 
+    @SerializedName("image")
+    var image: String,
+
     @SerializedName("temperature")
     val temperature: String,
 
-    @SerializedName("image")
-    var image: String,
+    @SerializedName("schedule")
+    val schedule: String,
+
+    @SerializedName("price")
+    val price: String,
 
     @SerializedName("ubication")
     var ubication: String
