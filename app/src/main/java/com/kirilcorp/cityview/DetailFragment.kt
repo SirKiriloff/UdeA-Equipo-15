@@ -21,6 +21,8 @@ class DetailFragment : Fragment() {
     private lateinit var titleView: TextView
     private lateinit var descriptionView: TextView
     private lateinit var temperatureView: TextView
+    private lateinit var scheduleView: TextView
+    private lateinit var priceView: TextView
     private lateinit var imgView: ImageView
     private lateinit var ubicationBtn: Button
 
@@ -33,6 +35,8 @@ class DetailFragment : Fragment() {
         descriptionView=binding.infoGeneral
         titleView=binding.titleDetail
         temperatureView=binding.temperatureDetail
+        scheduleView=binding.scheduleDetail
+        priceView=binding.priceDetail
         imgView=binding.placeImg
         ubicationBtn=binding.btnUbication
         ubicationBtn.setOnClickListener {
@@ -52,6 +56,8 @@ class DetailFragment : Fragment() {
             titleView.text = site.name
             descriptionView.text = site.descriptio
             temperatureView.text = site.temperature
+            scheduleView.text = site.schedule
+            priceView.text = site.price
             ubicationBtn.text = site.ubication
             Picasso.get().load(site.image).into(imgView)
         })
