@@ -14,6 +14,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        
+        Thread.sleep(2000)
+        setTheme(R.style.Theme_CityView)
+        
         @Suppress("UNUSED_VARIABLE")
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         navController = this.findNavController(R.id.myNavHostFragment)
