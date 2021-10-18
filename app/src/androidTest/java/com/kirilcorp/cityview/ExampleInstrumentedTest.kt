@@ -1,5 +1,10 @@
 package com.kirilcorp.cityview
 
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.ViewMatchers.isDisplayed
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
 
@@ -21,4 +26,10 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.kirilcorp.cityview", appContext.packageName)
     }
+
+//    fun menuTest(){
+//        onView(withId(R.id.fragmentSettingsHector))            // withId(R.id.my_view) is a ViewMatcher
+//            .perform(click())               // click() is a ViewAction
+//            .check(matches(isDisplayed()))  // matches(isDisplayed()) is a ViewAssertion
+//    }
 }
